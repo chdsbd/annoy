@@ -1,8 +1,9 @@
 
-from typing import Iterable, Sized, overload
+from typing import Sized, overload
 from typing_extensions import Literal, Protocol
 
-class _Vector(Protocol, Sized, Iterable[float]): ...
+class _Vector(Protocol, Sized):
+    def __getitem__(self, i: int) -> float: ...
 
 class AnnoyIndex:
     f: int
